@@ -1,5 +1,6 @@
 /* ANY */
 @font-face {
+    font-display: swap;
     font-family: font;
     src: url( "../fonts/3270.ttf" );
 }

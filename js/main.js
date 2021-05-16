@@ -81,7 +81,7 @@ function setTitle( title ) {
 window.addEventListener("click", function(e){   
     if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "index.html" ) {
         document.location.href = "./projects.html";
-    } else if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "projects.html" ) {
-        document.location.href = "./index.html";
+    } else if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "" ) {
+        document.location.href = "";
     }
   });
