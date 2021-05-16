@@ -78,11 +78,11 @@ function setTitle( title ) {
     } );
 }
 
-window.addEventListener("click", (e) => {
+document.getElementById("ico").addEventListener("click", () => {
     var loc = document.location.href.split("/").pop();
-    if ( document.getElementById("ico").contains(e.target) && ( loc == "index.html" || loc == "" ) ) {
+    if ( loc == "index.html" || loc == "" ) {
         document.location.href = "./projects.html";
-    } else if ( document.getElementById("ico").contains(e.target) && loc == "projects.html" ) {
+    } else if ( loc == "projects.html" ) {
         document.location.href = "./index.html";
     }
 });
