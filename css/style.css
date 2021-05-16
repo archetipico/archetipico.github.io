@@ -46,7 +46,6 @@ code {
     animation: fadein 3s ease-in-out;
     color: var( --link );
     font-weight: lighter;
-    text-shadow: 0 0 0.05em var( --link );
 }
 
 h1 {
@@ -73,8 +72,8 @@ span {
     cursor: pointer;
 }
 
-span:hover {
-    text-shadow: 0 0 0.2em var( --link );
+a:hover, code:hover, .logo:hover, span:hover {
+    text-shadow: 0 0 1rem var( --link );
 }
 
 /* HEADER */
@@ -145,10 +144,6 @@ ul {
     font-size: var( --logo );
     text-decoration: none;
     transition: text-shadow 0.5s ease-out;
-}
-
-a:hover, .logo:hover, span:hover {
-    text-shadow: 0 0 1rem var( --link );
 }
 
 #storage {
