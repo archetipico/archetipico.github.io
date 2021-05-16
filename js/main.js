@@ -78,10 +78,11 @@ function setTitle( title ) {
     } );
 }
 
-window.addEventListener("click", function(e){   
-    if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "index.html" ) {
+window.addEventListener("click", (e) => {
+    var loc = document.location.href.split("/").pop();
+    if ( document.getElementById("ico").contains(e.target) && ( loc == "index.html" || loc == "" ) ) {
         document.location.href = "./projects.html";
-    } else if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "projects.html" ) {
+    } else if ( document.getElementById("ico").contains(e.target) && loc == "projects.html" ) {
         document.location.href = "./index.html";
     }
-  });
+});
