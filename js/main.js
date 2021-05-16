@@ -80,8 +80,8 @@ function setTitle( title ) {
 
 window.addEventListener("click", function(e){   
     if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "index.html" ) {
-        document.location.href = "./projects.html";
-    } else if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "" ) {
-        document.location.href = "";
+        document.location.href = "https://archetipico.github.io/projects.html";
+    } else if ( document.getElementById("ico").contains(e.target) && document.location.href.split("/").pop() == "projects.html" ) {
+        document.location.href = "https://archetipico.github.io/index.html";
     }
   });
