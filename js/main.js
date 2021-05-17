@@ -12,39 +12,21 @@ if ( mode == "light" || ( mode == null && window.matchMedia( "(prefers-color-sch
     document.getElementById( "dark-mode" ).innerHTML = "&#61830;";
 }
 
-let fav = "🌴";
-switch ( new Date().getDay() ) {
-    case 1:
-        fav = "🌌";
-        break;
-    case 2:
-        fav = "💯";
-        break;
-    case 3:
-        fav = "🍤";
-        break;
-    case 4:
-        fav = "🌈";
-        break;
-    case 5:
-        fav = "🍸";
-        break;
-    case 6:
-        fav = "🍑";
-        break;
-    default:
-        break;
-}
-changeFav( fav );
+const fav = ["🌴", "🌌", "💯", "🍤", "🌈", "🍸", "🍑"];
+var link = document.createElement( "link" );
+link.rel = "shortcut icon";
+link.type = "image/svg+xml";
+link.href = "data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 132 132%22><text y=%221em%22 font-size=%22100%22>"+fav[new Date().getDay()]+"</text></svg>";
+document.head.appendChild( link );
 
-function changeFav( fav ) {
-    var link = document.createElement( "link" );
-    link.rel = "shortcut icon";
-    link.type = "image/svg+xml";
-    link.href = "data:image/svg+xml, <svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 132 132%22><text y=%221em%22 font-size=%22100%22>"+fav+"</text></svg>";
-
-    document.head.appendChild( link );
-}
+document.getElementById("ico").addEventListener("click", () => {
+    var loc = document.location.href.split("/").pop();
+    if ( loc == "index.html" || loc == "" ) {
+        document.location.href = "./projects.html";
+    } else if ( loc == "projects.html" ) {
+        document.location.href = "./index.html";
+    }
+});
 
 function clearStorage() {
     localStorage.clear();
@@ -55,7 +37,7 @@ function clearStorage() {
     }, 2000 );
 }
 
-function setMode(){
+function setMode() {
     if ( localStorage.getItem( "data-mode" ) == "light" ) {
         localStorage.setItem( "data-mode", "dark");
         document.documentElement.setAttribute( "data-mode", "dark" );
@@ -66,23 +48,7 @@ function setMode(){
         document.getElementById( "dark-mode" ).innerHTML = "&#58125;";
     }
 
-    redraw();
+    setTimeout( () => {
+        redraw();
+    }, 100 );
 }
-
-function setTitle( title ) {
-    let arr = title.split( "" );
-    arr.forEach( ( c, i ) => {
-        setTimeout( () => {
-            document.querySelector( "h1" ).innerHTML += c;
-        }, i * 75 );
-    } );
-}
-
-document.getElementById("ico").addEventListener("click", () => {
-    var loc = document.location.href.split("/").pop();
-    if ( loc == "index.html" || loc == "" ) {
-        document.location.href = "./projects.html";
-    } else if ( loc == "projects.html" ) {
-        document.location.href = "./index.html";
-    }
-});
