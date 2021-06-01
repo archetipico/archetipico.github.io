@@ -23,7 +23,7 @@ document.getElementById("ico").addEventListener("click", () => {
     var loc = document.location.href.split("/").pop();
     if ( loc == "index.html" || loc == "" ) {
         document.location.href = "./projects.html";
-    } else if ( loc == "projects.html" ) {
+    } else if ( loc == "projects.html" || loc == "email.html" ) {
         document.location.href = "./index.html";
     }
 });

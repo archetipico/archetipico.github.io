@@ -62,7 +62,7 @@ p {
 }
 
 #scene {
-    animation: fadein 3s ease-in-out;
+    animation: fadein 10s ease-in-out;
     position: fixed;
     z-index: -1;
 }
@@ -71,6 +71,14 @@ span {
     animation: fadein 3s ease-in-out;
     color: var( --link );
     cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 a:hover, code:hover, .logo:hover, span:hover {
