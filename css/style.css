@@ -43,6 +43,10 @@ a {
     font-weight: bolder;
 }
 
+a:not(.logo) {
+    text-shadow: 0 0 1rem var( --link );
+}
+
 h1 {
     animation: fadein 0.5s ease-in-out;
     font-size: var( --big-size );
@@ -75,8 +79,8 @@ span {
     user-select: none;
 }
 
-a:hover, .logo:hover, span:hover {
-    text-shadow: 0 0 1rem var( --link );
+.logo:hover, span:hover {
+    text-shadow: 0 0 1rem var( --link ) !important;
 }
 
 /* HEADER */
@@ -119,7 +123,7 @@ img {
 }
 
 img:hover {
-    box-shadow: 0 0 2.5rem 0 var( --link );
+    box-shadow: 0 0 2rem 0 var( --link );
 }
 
 #infos {
