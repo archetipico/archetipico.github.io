@@ -117,7 +117,7 @@ span {
 img {
     animation: fadein 2s ease-in-out;
     border-radius: 50%;
-    box-shadow: 0 0 0.3rem 0 var( --link );
+    box-shadow: 0 0 0.1rem 0 var( --link );
     height: var( --avatar );
     width: var( --avatar );
     transition: box-shadow 1s ease-out;
