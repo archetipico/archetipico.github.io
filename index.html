@@ -9,26 +9,28 @@
     <base target="_blank" />
     <style>
         @media (min-width: 1367px) {
-            body {
-                background-image: url("B_phone.jpg") !important;
-            }
             div {
                 width: 25% !important;
+            }
+            .card {
+                border-radius: 2rem !important;
             }
         }
         b, i {
             color: #000;
         }
         body {
-            background-image: url("B.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background: linear-gradient(135deg, rgba(3,0,61,1) 0%, rgba(96,141,183,1) 35%, rgba(162,177,199,1) 100%);
+            background-attachment: fixed;
             color: #fff;
             display: flex;
             flex-direction: column;
             font: 18px monospace;
-            min-height: 97vh;
+            height: 100%;
+            margin: 0;
+        }
+        html {
+            height: 100%;
         }
         h2 {
             margin-bottom: 0;
@@ -41,13 +43,13 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(3rem);
             border: 1px solid #aaa3;
-            border-radius: 2rem;
+            border-radius: 0;
             margin: auto;
             padding: 2rem;
             text-align: justify;
             text-justify: inter-word;
+            width: 75%;
             word-break: break-all;
-            width: auto;
             word-wrap: break-word;
         }
         .photo {
