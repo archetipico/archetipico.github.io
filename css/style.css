@@ -1,0 +1,103 @@
+/* font face */
+@font-face {
+    font-display: block;
+    font-family: font;
+    src: url("../fonts/3270NerdFontMono-Regular.ttf");
+}
+
+/* media */
+@media only screen and (max-width: 600px) {
+    :root {
+        --avatar: 11rem;
+        --big-size: 1.5rem;
+        --text-size: 16px;
+        --content-width: 95%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    :root {
+        --avatar: 13rem;
+        --big-size: 2rem;
+        --text-size: 18px;
+        --content-width: 90%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    :root {
+        --avatar: 15rem;
+        --big-size: 2.5rem;
+        --text-size: 20px;
+        --content-width: 80%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    :root {
+        --avatar: 17rem;
+        --big-size: 3rem;
+        --text-size: 24px;
+        --content-width: 75%;
+    }
+}
+@media only screen and (min-width: 1700px) {
+    :root {
+        --avatar: 18rem;
+        --big-size: 4rem;
+        --text-size: 32px;
+        --content-width: 65%;
+    }
+}
+
+/* constants */
+:root {
+    --background: #000;
+    --link: #fda2a2de;
+    --text-color: #fcfcfc;
+}
+
+/* other */
+body {
+    background: var(--background);
+    color: var(--text-color);
+    font-family: font;
+    font-size: var(--text-size);
+    margin: 0;
+    transition: all 0.7s ease;
+}
+
+b {
+    color: var(--link);
+    font-weight: bolder;
+    text-shadow: 0 0 1rem var(--link);
+}
+
+h1 {
+    text-shadow: 0 0 0.01em var(--text-color);
+}
+
+#card {
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.7rem);
+    border: 1px solid var(--link);
+    border-top: 0px;
+    border-bottom: 0px;
+    margin: auto;
+    width: var(--content-width);
+}
+
+#content {
+    margin: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+img {
+    border-radius: 50%;
+    box-shadow: 0 0 0.01rem 0 var(--link);
+    height: var(--avatar);
+    width: var(--avatar);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+img:hover {
+    box-shadow: 0 0 1rem var(--link);
+}

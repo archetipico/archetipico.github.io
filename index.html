@@ -1,76 +1,83 @@
 <!DOCTYPE html>
-<html lang="EN">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="E. Ferrari" />
-    <meta name="title" content="Cosmic juice &#127756;" />
-    <meta name="description" content="Essential" />
-    <link rel="icon" href="data:," />
-    <title>Home</title>
-    <base target="_blank" />
-    <style>
-        @media (min-width: 1367px) {
-            div {
-                width: 25% !important;
-            }
-        }
-        b, i {
-            color: #000;
-        }
-        body {
-            background: linear-gradient(135deg, rgba(3,0,61,1) 0%, rgba(96,141,183,1) 50%, rgba(162,177,199,1) 100%);
-            background-attachment: fixed;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            font: 18px monospace;
-            height: 100%;
-            margin: 0;
-        }
-        html {
-            height: 100%;
-        }
-        h2 {
-            margin-bottom: 0;
-        }
-        p, ul {
-            margin-top: 0;
-        }
-        .card {
-            background: #3333;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(5rem);
-            border: 1px solid #aaa3;
-            margin: auto;
-            padding: 2rem;
-            text-align: justify;
-            text-justify: inter-word;
-            width: 75%;
-            word-break: break-all;
-            word-wrap: break-word;
-        }
-        .photo {
-            margin: auto;
-            text-align: center;
-        }
-    </style>
-    <div class="card">
-        <h2>Who I am</h2>
-        <p>Based in <b>Milan</b> since <b>1997</b>. I attended a Scientific Lyceum displaying a thesis on malwares and art. I'm graduating in <b>Computer Science</b> at Universita' degli Studi di Milano. I also work as a <b>Systems Analyst</b> since 2017.</p>
-        <div class="photo">
-            <a href="https://github.com/archetipico/" rel="noopener noreferrer nofollow"><img src="A.png" alt="A" /></a>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="title" content="Home">
+        <meta name="description" content="Beware of the non-cosmic concentration gradient of the liminal space between your projection and the Universe.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://archetipico.github.io/">
+        <meta property="og:title" content="Home">
+        <meta property="og:description" content="Beware of the non-cosmic concentration gradient of the liminal space between your projection and the Universe.">
+        <meta property="og:image" content="./images/profile.png">
+        <title>Home</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="card">
+            <div id="content">
+                <div id="bio">
+                    <img src="./images/profile.png" alt="avatar">
+                    <h1>Biography</h1>
+                    <p>
+                        Based in <b>Milan</b> since <b>1997</b>.
+                        I attended a Scientific Lyceum displaying a thesis on malwares and art.
+                        I'm graduating in <b>Computer Science</b> at Universita' degli Studi di Milano.
+                        Moreover, I also work as a <b>Systems Analyst</b> since 2017.
+                        <br><br>
+                        My interests are <b>Information Security</b> and <b>Scientific Visualization</b>, while in the free time I study <b>Computer Graphics</b> and random hobbies.
+                    </p>
+                </div>
+                <div id="projects">
+                    <h1>Projects</h1>
+                    <a class="image-link" href="https://github.com/archetipico/archetipico.github.io" rel="noopener noreferrer nofollow" target="_blank">
+                        <img src="./images/proj_website.png" alt="proj_website">
+                    </a>
+                    <p>
+                        <b>> archetipico.github.io</b>
+                        <br>
+                        That's the website you're using right now!
+                    </p>
+
+                    <br><br><br>
+
+                    <a class="image-link" href="https://github.com/MasterCruelty/eMerger" rel="noopener noreferrer nofollow" target="_blank">
+                        <img src="./images/proj_emerger.png" alt="proj_emerger">
+                    </a>
+                    <p>
+                        <b>> eMerger</b>
+                        <br>
+                        Useful toolkit for UNIX systems completely made in Bash. Once installed you only have to type `up` to update everything that can be updated.
+                    </p>
+
+                    <br><br><br>
+
+                    <a class="image-link" href="https://github.com/archetipico/TelegramBot" rel="noopener noreferrer nofollow" target="_blank">
+                        <img src="./images/proj_tgbot.png" alt="proj_tgbot">
+                    </a>
+                    <p>
+                        <b>> TelegramBot</b>
+                        <br>
+                        My Telegram bot: it can tell you the weather, compile regexes, create a palette of colors from an image and more!
+                    </p>
+
+                    <br><br><br>
+
+                    <a class="image-link" href="https://github.com/archetipico/WallpaperEnhancer" rel="noopener noreferrer nofollow" target="_blank">
+                        <img src="./images/proj_enhancer.png" alt="proj_enhancer">
+                    </a>
+                    <p>
+                        <b>> WallpaperEnhancer</b>
+                        <br>
+                        Windows 10 doesn't let you change your wallpaper based on the time of the day, but this little script will do the job.
+                    </p>
+                </div>
+            </div>
         </div>
-        <h2>What I like</h2>
-        <ul>
-            <li>Computer Graphics</li>
-            <li>InfoSec</li>
-            <li>Logic</li>
-            <li>Scientific Visualization</li>
-        </ul>
-        <h2>This website</h2>
-        <ul>
-            <li>DRY, KISS & YAGNI</li>
-            <li>No fonts, no cookies, no JavaScript &#128552;</li>
-            <li>Optimized and minified</li>
-        </ul>
-    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+        <script src="./js/main.js"></script>
+        <script src="./js/particle.js"></script>
+        <script src="./js/background.js"></script>
+    </body>
 </html>
