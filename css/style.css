@@ -5,83 +5,69 @@
     src: url("../fonts/3270NerdFontMono-Regular.ttf");
 }
 
-/* media */
+/* media constants */
 @media only screen and (max-width: 600px) {
     :root {
-        --avatar: 11rem;
-        --big-size: 1.5rem;
-        --text-size: 16px;
-        --content-width: 95%;
+        --ts: 16px;
+        --cw: 95%;
     }
 }
 @media only screen and (min-width: 600px) {
     :root {
-        --avatar: 13rem;
-        --big-size: 2rem;
-        --text-size: 18px;
-        --content-width: 90%;
+        --ts: 18px;
+        --cw: 90%;
     }
 }
 @media only screen and (min-width: 768px) {
     :root {
-        --avatar: 15rem;
-        --big-size: 2.5rem;
-        --text-size: 20px;
-        --content-width: 80%;
+        --ts: 20px;
+        --cw: 80%;
     }
 }
 @media only screen and (min-width: 992px) {
     :root {
-        --avatar: 17rem;
-        --big-size: 3rem;
-        --text-size: 24px;
-        --content-width: 75%;
+        --ts: 24px;
+        --cw: 75%;
     }
 }
 @media only screen and (min-width: 1700px) {
     :root {
-        --avatar: 18rem;
-        --big-size: 4rem;
-        --text-size: 32px;
-        --content-width: 65%;
+        --ts: 32px;
+        --cw: 65%;
     }
 }
 
-/* constants */
+/* general constants */
 :root {
-    --background: #000;
-    --link: #fda2a2de;
-    --text-color: #fcfcfc;
+    --bg: #000;
+    --lk: #fda2a2de;
+    --tc: #fcfcfc;
+    --bt: calc(var(--ts) * 8);
 }
 
 /* other */
 body {
-    background: var(--background);
-    color: var(--text-color);
+    background: var(--bg);
+    color: var(--tc);
     font-family: font;
-    font-size: var(--text-size);
+    font-size: var(--ts);
     margin: 0;
     transition: all 0.7s ease;
 }
 
 b {
-    color: var(--link);
+    color: var(--lk);
     font-weight: bolder;
-    text-shadow: 0 0 1rem var(--link);
-}
-
-h1 {
-    text-shadow: 0 0 0.01em var(--text-color);
+    text-shadow: 0 0 1rem var(--lk);
 }
 
 #card {
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(0.7rem);
-    border: 1px solid var(--link);
+    backdrop-filter: blur(0.5rem);
+    border: 1px solid var(--lk);
     border-top: 0px;
     border-bottom: 0px;
     margin: auto;
-    width: var(--content-width);
+    width: var(--cw);
 }
 
 #content {
@@ -90,14 +76,18 @@ h1 {
     padding: 1rem;
 }
 
+h1 {
+    text-shadow: 0 0 0.01rem var(--tc);
+}
+
 img {
     border-radius: 50%;
-    box-shadow: 0 0 0.01rem 0 var(--link);
-    height: var(--avatar);
-    width: var(--avatar);
+    box-shadow: 0 0 0.1rem var(--lk);
+    height: var(--bt);
+    width: var(--bt);
     transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 img:hover {
-    box-shadow: 0 0 1rem var(--link);
+    box-shadow: 0 0 1rem var(--lk);
 }

@@ -2,11 +2,13 @@ function Particle() {
     this.pos = createVector(random(width), random(height));
     this.vel = p5.Vector.random2D();
     this.acc = createVector(0, 0);
-    this.maxspeed = 2;
+    this.maxspeed = round(random(1, 2));
     this.prevPos = this.pos.copy();
     this.rgb = [];
     this.age = 0;
+    this.death = round(random(1000, 3000));
     this.strokeWeight = 0;
+    this.uniqueValue = this.pos + Date.now();
 
     this.applyForce = function(force) {
         this.acc.add(force);
@@ -51,6 +53,14 @@ function Particle() {
         return this.age;
     }
 
+    this.getDeath = function() {
+        return this.death;
+    }
+
+    this.getUniqueValue = function() {
+        return this.uniqueValue;
+    }
+
     this.incrementAge = function() {
         this.age++;
     }
@@ -60,7 +70,7 @@ function Particle() {
     }
 
     this.setStrokeWeight = function(w) {
-        this.strokeWeight = w;
+        this.strokeWeight = round(w);
     }
 
     this.show = function() {
