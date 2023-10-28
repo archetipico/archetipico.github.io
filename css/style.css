@@ -81,7 +81,7 @@ b {
 }
 
 #card {
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(0.7rem);
     border: 1px solid var(--lk);
     border-top: 0px;
     border-bottom: 0px;
