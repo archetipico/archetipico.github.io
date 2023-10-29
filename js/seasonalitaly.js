@@ -168,7 +168,7 @@ svg.append("text")
     .style("font-size", fontSize * 2)
     .style("font-family", "Arial, sans-serif")
     .style("font-weight", "bold")
-    .text("Seasonal Fruit Availability in Italy");
+    .text("Disponibilità di frutta di stagione in Italia");
 
 svg.selectAll("g")
     .data(fruits)
