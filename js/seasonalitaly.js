@@ -153,6 +153,17 @@ const svg = d3.select("#fruits-calendar")
     .attr("viewBox", `0 0 ${width} ${height}`)
     .attr("preserveAspectRatio", "xMidYMid meet");
 
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if (isMobile) {
+    const zoomHandler = d3.zoom()
+        .on("zoom", (event) => {
+            svg.attr("transform", event.transform);
+        });
+
+    svg.call(zoomHandler);
+}
+
 const y = d3.scaleBand()
     .domain(fruits)
     .range([margin.top, height - margin.bottom]);
