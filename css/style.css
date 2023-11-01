@@ -115,6 +115,10 @@ h1 {
     padding-top: 2rem;
 }
 
+.small {
+    font-size: 0.5em;
+}
+
 #shadow {
     position: sticky;
     bottom: 0;

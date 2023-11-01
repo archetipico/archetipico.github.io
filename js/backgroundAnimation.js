@@ -26,8 +26,8 @@ function Particle() {
     }
 
     this.edges = () =>  {
-        this.pos.x = Math.max(-5, Math.min(this.pos.x, width + 5));
-        this.pos.y = Math.max(-5, Math.min(this.pos.y, height + 5));
+        this.pos.x = Math.max(-10, Math.min(this.pos.x, width + 10));
+        this.pos.y = Math.max(-10, Math.min(this.pos.y, height + 10));
         this.updatePrev();
     }
 
@@ -70,8 +70,18 @@ let rows;
 let flowfield;
 let particles = [];
 
+function initializer() {
+    cols = floor(width / scl);
+    rows = floor(height / scl);
+    flowfield = new Array(cols * rows);
+
+    populate(rows + cols);
+}
+
 function setup() {
-    const cvn = createCanvas(windowWidth, windowHeight);
+    const W = windowWidth + 10;
+    const H = windowHeight + 10;
+    const cvn = createCanvas(W, H);
     cvn.position(0, 0);
     cvn.style('position', 'fixed');
     cvn.style('z-index', '-1');
@@ -79,11 +89,7 @@ function setup() {
     pixelDensity(1);
     noiseDetail(1);
 
-    cols = floor(width / scl);
-    rows = floor(height / scl);
-    flowfield = new Array(cols * rows);
-
-    populate(rows + cols);
+    initializer();
     animate();
 }
 
@@ -94,6 +100,8 @@ function animate() {
 }
 
 function populate(size) {
+    particles = [];
+
     for (let i = 0; i < size; i++) {
         particles.push(new Particle());
     }
@@ -135,10 +143,6 @@ function updateParticles() {
 }
 
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-    particles = [];
-    cols = floor(width / scl);
-    rows = floor(height / scl);
-    flowfield = new Array(cols * rows);
-    populate(rows + cols);
+    resizeCanvas(windowWidth + 10, windowHeight + 10);
+    initializer();
 }
