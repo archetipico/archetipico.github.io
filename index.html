@@ -19,7 +19,12 @@
         <div id="card">
             <div id="content">
                 <div id="bio">
-                    <img class=image-main src="./images/profile.png" alt="avatar">
+                    <img id="profile-img" class=image-main alt="avatar">
+
+                    <div id="header">
+                        <a href="" id="color-mode" onclick="setColorMode()">&#61830;</a>
+                    </div>
+
                     <h1>Biography</h1>
                     <p>
                         Since 1997, I've called <b>Milan</b> my home.
@@ -82,6 +87,10 @@
                 </div>
 
                 <div id="footer">
+                    <a href="" id="storage" type="button" onclick="localStorage.clear()">
+                        Elimina cache
+                    </a>
+
                     <p class="small">
                         Made by me, for the web surfers.
                     </p>
@@ -91,5 +100,11 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.min.js" async></script>
         <script src="./js/backgroundAnimation.js" async></script>
+        <script async>
+            // Set profile image
+            window.onload = function() {
+                document.getElementById("profile-img").src = "./images/profile_" + (localStorage["mode"] === "dark" ? "dark" : "light") + ".png";
+            };
+        </script>
     </body>
 </html>

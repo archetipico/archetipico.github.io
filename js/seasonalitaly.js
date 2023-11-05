@@ -134,9 +134,9 @@ const months = ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "
 const fruits = Object.keys(data);
 
 const root = document.documentElement;
-const cellSize = parseInt(getComputedStyle(root).getPropertyValue('--cell-width'));
-const cellColor = getComputedStyle(root).getPropertyValue('--cell-color').trim();
-const fontSize = getComputedStyle(root).getPropertyValue('--font-size').trim();
+const cellSize = parseInt(getComputedStyle(root).getPropertyValue("--cell-width"));
+const cellColor = getComputedStyle(root).getPropertyValue("--cell-color").trim();
+const fontSize = getComputedStyle(root).getPropertyValue("--font-size").trim();
 
 const margin = {
     top: 200,
@@ -208,16 +208,16 @@ svg.append("g")
     .attr("dx", "-1em")
     .style("fill", "#333");
 
-document.getElementById('download-svg').addEventListener('click', function() {
-    const svgElement = document.querySelector('svg');
+document.getElementById("download-svg").addEventListener("click", function() {
+    const svgElement = document.querySelector("svg");
     const serializer = new XMLSerializer();
     const svgString = serializer.serializeToString(svgElement);
-    const blob = new Blob([svgString], { type: 'image/svg+xml' });
+    const blob = new Blob([svgString], { type: "image/svg+xml" });
     const url = window.URL.createObjectURL(blob);
 
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = 'graph.svg';
+    link.download = "graph.svg";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
