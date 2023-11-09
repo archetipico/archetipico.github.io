@@ -1,2 +1,5 @@
 # Fonts
-- <code>3270-Medium_Nerd_Font_Complete</code> downloaded from <a href="https://www.nerdfonts.com/font-downloads">nerdfonts</a>
+- <code>JetBrainsMono-VariableFont_wght.ttf</code> downloaded from <a href="https://fonts.google.com/specimen/JetBrains+Mono">Google Fonts</a>
+- <code>moon.svg</code> SVG used for the moon
+- <code>OFL</code> font LICENSE
+- <code>sun.svg</code> SVG used for the sun
