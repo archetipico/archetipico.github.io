@@ -28,9 +28,7 @@ if (document.cookie.includes("mode=light")) {
 
 // Function to set color mode
 function setColorMode() {
-    const currMode = document.cookie.includes("mode=light") ? "light" : "dark";
-    const newMode = currMode === "light" ? "dark" : "light";
-    document.cookie = "mode=" + newMode + "; max-age=2592000; path=/; SameSite=Strict";
+    document.cookie = "mode=" + (document.cookie.includes("mode=light") ? "dark" : "light") + "; max-age=2592000; path=/; SameSite=Strict";
     location.reload();
 }
 

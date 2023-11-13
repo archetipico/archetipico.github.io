@@ -106,7 +106,7 @@ function generateGraph(data, name) {
         .attr("height", cs)
         .attr("rx", 50)
         .attr("ry", 50)
-        .style("stroke", localStorage["mode"] === "light" ? "#00000020" : "#ffffff20");
+        .style("stroke", document.cookie.includes("mode=light") ? "#00000030" : "#ffffff30");
     // Y-axis text
     svg.append("g")
         .attr("transform", `translate(${m.left}, 0)`)
