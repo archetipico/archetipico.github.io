@@ -1,22 +1,44 @@
+/* font face */
+@font-face {
+    font-display: block;
+    font-family: font;
+    src: url("../fonts/JetBrainsMono-VariableFont_wght.ttf");
+}
+
+/* fade-in animation */
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 /* media constants */
 @media only screen and (max-width: 600px) {
     :root {
-        --ts: 16px;
+        --ts: 32px;
+    }
+
+    #fruits-calendar, #vegetables-calendar {
+        flex: 0 0 100%;
+        min-width: auto !important;
     }
 }
 @media only screen and (min-width: 600px) {
     :root {
-        --ts: 18px;
+        --ts: 26px;
     }
 }
 @media only screen and (min-width: 768px) {
     :root {
-        --ts: 20px;
+        --ts: 28px;
     }
 }
 @media only screen and (min-width: 992px) {
     :root {
-        --ts: 24px;
+        --ts: 30px;
     }
 }
 @media only screen and (min-width: 1700px) {
@@ -27,23 +49,107 @@
 
 /* general constants */
 :root {
+    --bg: #000;
     --bt: calc(var(--ts) * 8);
-    --font-size: calc(var(--ts) / 2.5);
-    --cell-width: 80px;
-    --cell-color: #b3e6c1;
+    --cw: 80px;
+    --fs: calc(var(--ts) / 1.5);
+    --lk: #fda0a0bf;
+    --tc: #fcfcfc;
 }
 
 /* other */
+a {
+    color: var(--lk);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.a-common {
+    letter-spacing: 2px;
+    text-shadow: 0 0 1rem var(--lk);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.a-common::before {
+    content: "> ";
+}
+
+.a-common::after {
+    content: " <";
+}
+
+.a-common:hover {
+    letter-spacing: 0;
+    text-shadow: 0 0 0 var(--lk);
+}
+
 body {
-    background: #fcfcfc;
-    color: #010101;
-    font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+    background: var(--bg);
+    color: var(--tc);
+    font-family: font, system-ui, -apple-system, 'Helvetica Neue', sans-serif;
     font-size: var(--ts);
     margin: 0;
     text-align: center;
-    transition: all 0.7s ease;
 }
 
-.cell {
-    stroke: #69696980;
+#color-mode, #go-back {
+    filter: drop-shadow(0 0 1rem var(--lk));
+    height: 1.5em;
+    transition: filter 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    width: 1.5em;
+}
+
+#color-mode:hover, #go-back:hover {
+    filter: drop-shadow(0 0 0 var(--lk));
+}
+
+#color-mode-link {
+    font-size: calc(var(--ts) * 2);
+    height: 1.5em;
+    margin: auto;
+    width: 1.5em;
+}
+
+#footer {
+    margin: calc(var(--bt) / 4);
+}
+
+.go-back{
+    stroke: var(--lk);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+#go-back-link {
+    font-size: calc(var(--ts) * 2);
+    height: 1.5em;
+    margin: auto;
+    width: 1.5em;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: calc(var(--bt) / 4);
+}
+
+/* graphs */
+.calendar {
+    flex: 0 0 49%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#calendars-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#fruits-calendar, #vegetables-calendar {
+    border: 1px solid var(--lk);
+    min-width: 600px;
+    padding: .25%;
 }

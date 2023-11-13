@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="project-elem">
-                        <a class="a-common" href="./seasonalitaly.html" rel="noopener noreferrer nofollow" target="_blank">SeasonalItaly</a>
+                        <a class="a-common" href="./content/seasonalitaly.html">SeasonalItaly</a>
                         <p>
                             Here are a few tables (in Italian) to remind me to consume seasonal foods, with a focus on their climate impact.
                         </p>
@@ -94,8 +94,8 @@
                 </div>
 
                 <div id="footer">
-                    <a class="a-common" href="" id="storage" type="button" onclick="localStorage.clear()">
-                        Elimina cache
+                    <a id="storage" class="a-common" href="" type="button" onclick="deleteCookies()">
+                        Elimina cookies
                     </a>
 
                     <p class="small">
@@ -110,7 +110,7 @@
         <script async>
             // Set profile image
             window.onload = function() {
-                document.getElementById("profile-img").src = "./images/profile_" + (localStorage["mode"] === "dark" ? "dark" : "light") + ".png";
+                document.getElementById("profile-img").src = "./images/profile_" + (document.cookie.includes("mode=light") ? "light" : "dark") + ".png";
             };
         </script>
     </body>

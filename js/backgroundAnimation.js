@@ -73,7 +73,7 @@ let flowfield;
 let particles = [];
 
 function initializer() {
-    localStorage["mode"] === "dark" ? background(0, 0, 0) : background(250, 250, 250);
+    document.cookie.includes("mode=light") ? background(250, 250, 250) : background(0, 0, 0);
     cols = floor(width / scl);
     rows = floor(height / scl);
     flowfield = new Array(cols * rows);
@@ -104,7 +104,7 @@ function animate() {
 
 function populate(size) {
     particles = [];
-    let stroke_color = localStorage["mode"] === "dark" ? [253, 160, 160, 5] : [120, 104, 230, 5];
+    let stroke_color = document.cookie.includes("mode=light") ? [120, 104, 230, 5] : [253, 160, 160, 5];
     for (let i = 0; i < size; i++) {
         particles.push(new Particle(stroke_color));
     }

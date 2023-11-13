@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <meta name="title" content="SeasonalItaly">
+        <meta name="description" content="Yummy yummy food!">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://archetipico.github.io/content/seasonalitaly.html">
+        <meta property="og:title" content="SeasonalItaly">
+        <meta property="og:description" content="Yummy yummy food!">
+        <meta property="og:image" content="../images/profile_dark.png">
+        <title>SeasonalItaly</title>
+        <link rel="stylesheet" href="../css/seasonalitaly.css">
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <a id="go-back-link" href="../index.html"><svg id="go-back" fill="none" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle class="go-back" cx="16" cy="16" r="13"/><polyline class="go-back" points="18 21 13 16 18 11"/></svg></a>
+            <a id="color-mode-link" href="" onclick="setColorMode()"></a>
+        </div>
+
+        <p>
+            Disponibilità stagionali di alimenti vegetali in Italia
+        </p>
+
+        <div id="calendars-container">
+            <div id="fruits-calendar" class="calendar">
+                <h2>Frutta</h2>
+            </div>
+            <div id="vegetables-calendar" class="calendar">
+                <h2>Verdura e "verdura"</h2>
+            </div>
+        </div>
+
+        <div id="footer">
+            <a id="download-svg" class="a-common" href="" type="button" onclick="downloadAsSVG()">
+                Scarica come SVG
+            </a>
+        </div>
+
+        <script src="../js/main.js" async></script>
+        <script src="../js/seasonalitaly.js" async></script>
+    </body>
+</html>

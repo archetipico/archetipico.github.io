@@ -9,10 +9,8 @@ FRA.appendChild(LNK);
 document.head.appendChild(FRA);
 
 // Set color mode
-if (localStorage["mode"] === undefined) localStorage["mode"] = "dark";
-
 root = document.querySelector(":root");
-if (localStorage["mode"] === "light") {
+if (document.cookie.includes("mode=light")) {
     root.style.setProperty("--bg", "#fafafa");
     root.style.setProperty("--lk", "#7868e6e0");
     root.style.setProperty("--tc", "#000");
@@ -30,6 +28,19 @@ if (localStorage["mode"] === "light") {
 
 // Function to set color mode
 function setColorMode() {
-    localStorage["mode"] = localStorage["mode"] === "light" ? "dark" : "light";
+    const currMode = document.cookie.includes("mode=light") ? "light" : "dark";
+    const newMode = currMode === "light" ? "dark" : "light";
+    document.cookie = "mode=" + newMode + "; max-age=2592000; path=/; SameSite=Strict";
     location.reload();
+}
+
+// Function to delete cookies
+function deleteCookies() {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const eqPos = cookie.indexOf("=");
+        const name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+        document.cookie = name + "=; max-age=-1; path=/; SameSite=Strict";
+    }
 }
