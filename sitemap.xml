@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://archetipico.github.io/</loc>
+        <priority>1</priority>
+    </url>
+    <url>
+        <loc>https://archetipico.github.io/Fragmentary/</loc>
+        <priority>2</priority>
+    </url>
+    <url>
+        <loc>https://archetipico.github.io/APLamp/</loc>
+        <priority>2</priority>
+    </url>
+    <url>
+        <loc>https://archetipico.github.io/SeasonalItaly/</loc>
+        <priority>2</priority>
+    </url>
+</urlset>
