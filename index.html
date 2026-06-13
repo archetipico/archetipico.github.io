@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" data-mode="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+        <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+        <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+        <meta name="title" content="archetipico">
+        <meta name="description" content="Computer scientist in Milan. Side projects across security, graphics, programming languages, and games.">
+        <meta name="author" content="archetipico">
+        <meta name="theme-color" content="#0b0b0d" media="(prefers-color-scheme: dark)">
+        <meta name="theme-color" content="#f3eee3" media="(prefers-color-scheme: light)">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://archetipico.github.io/">
+        <meta property="og:title" content="archetipico">
+        <meta property="og:description" content="Computer scientist in Milan. Side projects across security, graphics, programming languages, and games.">
+        <meta property="og:image" content="./images/profile.png">
+        <meta property="og:image:alt" content="archetipico profile mark">
+        <meta property="og:site_name" content="archetipico">
+        <meta property="og:locale" content="en_US">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="archetipico">
+        <meta name="twitter:description" content="Computer scientist in Milan. Side projects across security, graphics, programming languages, and games.">
+        <meta name="twitter:image" content="./images/profile.png">
+        <title>archetipico</title>
+        <link rel="stylesheet" href="./css/style.css">
+        <script>
+            (function () {
+                var c = document.cookie;
+                var m = c.indexOf("mode=light") > -1 ? "light"
+                      : c.indexOf("mode=dark") > -1 ? "dark"
+                      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+                document.documentElement.setAttribute("data-mode", m);
+
+                var nav = (navigator.language || "").toLowerCase();
+                var l = c.indexOf("lang=it") > -1 ? "it"
+                      : c.indexOf("lang=en") > -1 ? "en"
+                      : nav.indexOf("it") === 0 ? "it"
+                      : "en";
+                document.documentElement.lang = l;
+                if (l !== "en") {
+                    document.documentElement.classList.add("lang-pending");
+                    setTimeout(function () {
+                        document.documentElement.classList.remove("lang-pending");
+                    }, 600);
+                }
+            })();
+        </script>
+        <script src="./js/main.js" defer></script>
+        <script src="./js/backgroundAnimation.js" defer></script>
+    </head>
+    <body>
+        <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+        <canvas id="bg-canvas" aria-hidden="true"></canvas>
+        <div class="grain" aria-hidden="true"></div>
+
+        <main id="main" class="shell" tabindex="-1">
+            <header class="topbar" aria-label="site header">
+                <div class="topbar__brand">
+                    <span class="prompt" aria-hidden="true">~/</span><span class="brand">archetipico</span>
+                </div>
+                <div class="topbar__meta" aria-label="site metadata">
+                    <span data-i18n="meta.city">Milan, IT</span>
+                    <span class="dot" aria-hidden="true">·</span>
+                    <span data-i18n="meta.est">est. 1997</span>
+                </div>
+                <div class="lang-toggle" role="group" data-i18n-aria-label="lang.aria" aria-label="Language">
+                    <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="true">EN</button>
+                    <span class="lang-toggle__sep" aria-hidden="true">/</span>
+                    <button type="button" class="lang-toggle__btn" data-lang="it" aria-pressed="false">IT</button>
+                </div>
+                <button id="mode-toggle" class="mode-toggle" type="button" data-i18n-aria-label="mode.aria" aria-label="Toggle color mode" aria-pressed="false">
+                    <span class="mode-toggle__track" aria-hidden="true">
+                        <span class="mode-toggle__thumb"></span>
+                    </span>
+                </button>
+            </header>
+
+            <section class="bio" aria-labelledby="bio-h">
+                <div class="section-label"><span class="section-label__bar" aria-hidden="true"></span><span data-i18n="sl.bio">01 &middot; whoami</span></div>
+                <h1 id="bio-h" class="h-display" data-i18n="h.bio">I turn bits into reality.</h1>
+
+                <figure class="bio__portrait" aria-hidden="true">
+                    <div class="bio__portrait-frame">
+                        <img id="profile-img" class="bio__portrait-img" src="./images/profile.png" alt="" width="220" height="220">
+                        <span class="bio__portrait-scan" aria-hidden="true"></span>
+                    </div>
+                    <figcaption class="bio__portrait-cap"><span class="bio__portrait-cap-mark" aria-hidden="true">&gt;</span>./me.png</figcaption>
+                </figure>
+
+                <div class="bio__body">
+                    <p class="lead" data-i18n="bio.p1">
+                        <b>Milan</b>, since 1997. Scientific high school, thesis on malware as art.
+                    </p>
+                    <p data-i18n="bio.p2">
+                        <b>Computer Science</b> at Universita&apos; degli Studi di Milano. Final thesis: a visual language for the identification of entities extracted from tabular data.
+                    </p>
+                    <p data-i18n="bio.p3">
+                        <b>Full-stack developer</b> by day. Outside work: information security, graphics programming, programming languages, videogames, and anything with a CPU.
+                    </p>
+                </div>
+            </section>
+
+            <section class="projects" aria-labelledby="projects-h">
+                <div class="section-label"><span class="section-label__bar" aria-hidden="true"></span><span data-i18n="sl.proj">02 &middot; projects</span></div>
+                <h2 id="projects-h" class="h-section" data-i18n="h.proj">Selected work</h2>
+
+                <ol class="project-list" role="list">
+                    <li class="project">
+                        <a class="project__link" href="https://archetipico.github.io/Fragmentary/" rel="noopener noreferrer">
+                            <span class="project__num" aria-hidden="true">/01</span>
+                            <span class="project__name">Fragmentary</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">shaders</span><span class="tag">graphics</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.fragmentary">Write and edit shaders straight in the browser.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://archetipico.github.io/SeasonalItaly/" rel="noopener noreferrer">
+                            <span class="project__num" aria-hidden="true">/02</span>
+                            <span class="project__name">SeasonalItaly</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag tag--lang" lang="it" data-i18n-title="tag.lang.it" title="Solo in italiano">italiano</span><span class="tag">food</span><span class="tag">seasonal</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.seasonal">Italian almanac of seasonal fruit and vegetables. <span class="project__lang" lang="it">In italiano.</span></p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://archetipico.github.io/paddle16/" rel="noopener noreferrer">
+                            <span class="project__num" aria-hidden="true">/03</span>
+                            <span class="project__name">paddle16</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">game</span><span class="tag">nasm</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.paddle16">Two-player paddle game in pure NASM.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/archetipico/TelegramBot" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/04</span>
+                            <span class="project__name">TelegramBot</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">bot</span><span class="tag">utilities</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.tg">Personal Telegram bot: weather, regex compiler, palette extraction from images, and much more!</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://archetipico.github.io/APLamp/" rel="noopener noreferrer">
+                            <span class="project__num" aria-hidden="true">/05</span>
+                            <span class="project__name">APLamp</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">apl</span><span class="tag">interpreter</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.aplamp">Client-side APL interpreter.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/MasterCruelty/eMerger" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/06</span>
+                            <span class="project__name">eMerger</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">updates</span><span class="tag">cli</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.emerger">Update any operating system by typing <code>up</code>. Built with <a href="https://mastercruelty.github.io/" rel="noopener noreferrer nofollow" target="_blank">MasterCruelty</a>.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/archetipico/AndroidDeBloater" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/07</span>
+                            <span class="project__name">AndroidDeBloater</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">android</span><span class="tag">debloat</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.android">Remove bloatware and pre-installed apps from Android phones.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/archetipico/SpaceConvoy" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/08</span>
+                            <span class="project__name">SpaceConvoy</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">chat</span><span class="tag">lan</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.convoy">Minimal LAN chat. No server, no signup.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/archetipico/WallpaperEnhancer" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/09</span>
+                            <span class="project__name">WallpaperEnhancer</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">wallpaper</span><span class="tag">automation</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.wp">Time-of-day wallpaper rotation for Windows 10.</p>
+                    </li>
+
+                    <li class="project">
+                        <a class="project__link" href="https://github.com/archetipico/archetipico.github.io" rel="noopener noreferrer nofollow" target="_blank">
+                            <span class="project__num" aria-hidden="true">/10</span>
+                            <span class="project__name">archetipico.github.io</span>
+                            <span class="project__tags" aria-label="topics"><span class="tag">portfolio</span><span class="tag">web</span></span>
+                        </a>
+                        <p class="project__desc" data-i18n="desc.site">This site.</p>
+                    </li>
+                </ol>
+            </section>
+
+            <footer class="foot" aria-label="site footer">
+                <div class="section-label"><span class="section-label__bar" aria-hidden="true"></span><span data-i18n="sl.foot">03 &middot; colophon</span></div>
+                <div class="foot__grid">
+                    <p class="foot__note" data-i18n="foot.note">
+                        Cookies used only for theme and language.
+                    </p>
+                    <div class="foot__actions">
+                        <button id="clear-storage" class="link-btn" type="button" data-i18n="foot.clear">Delete cookies</button>
+                        <span class="foot__rule" aria-hidden="true"></span>
+                        <span class="foot__year" id="foot-year"></span>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </body>
+</html>
